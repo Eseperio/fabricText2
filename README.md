@@ -10,3 +10,8 @@ Add a fabric.text element to your canvas setting the following additional parame
 * radius: integer //radius in pixels for the circumference
 * spacing: integer // Spacing between letters
 * reverse: boolean // Outer text or inner text. Default: true
+* 
+## To do
+* Add text background.
+* Add clipping
+* Resize bounding box to fit only text
