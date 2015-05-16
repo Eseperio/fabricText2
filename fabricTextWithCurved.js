@@ -375,7 +375,7 @@
          */
         toString: function () {
             return '#<fabric.Text (' + this.complexity() +
-                '): { "text": "' + this.text + '", "fontFamily": "' + this.fontFamily + '" }>';
+            '): { "text": "' + this.text + '", "fontFamily": "' + this.fontFamily + '" }>';
         },
 
         /**
@@ -936,13 +936,13 @@
             var markup = this._createBaseSVGMarkup(),
                 offsets = this._getSVGLeftTopOffsets(this.ctx),
                 textAndBg =  this._getSVGTextAndBg(offsets.textTop, offsets.textLeft);
-        if(!this.curvedText)
-        {
-            this._wrapSVGTextAndBg(markup, textAndBg);
-        }else
-        {
-            this._getSVGCurvedTextAndBg(markup,this.ctx);
-        }
+            if(!this.curvedText)
+            {
+                this._wrapSVGTextAndBg(markup, textAndBg);
+            }else
+            {
+                this._getSVGCurvedTextAndBg(markup,this.ctx);
+            }
 
             return reviver ? reviver(markup.join('')) : markup.join('');
         },
@@ -990,7 +990,7 @@
                 height = 0,
                 curAngle = 180, angleRadians = 0, align = 0, charOffset = 0, toDraw = [], angleOffset = 0, workingRadius = 0, lineOffset = 0, left = 0, top = 0, rotation = 0;
 
-                 this.render(ctx);
+            this.render(ctx);
             this._setTextStyles(ctx);
 
 
@@ -1021,6 +1021,7 @@
                         charOffset = 1
                     }
                     curAngle -= parseInt(kerning + this.spacing + charOffset);
+
                     charOffset = 0;
 
 
@@ -1033,14 +1034,14 @@
                 for (var j = 0; j < toDraw.length; j++) {
                     if (!this.reverse) {
                         angleRadians = fabric.util.degreesToRadians(toDraw[j].nextAngle - angleOffset);
-                        left = (Math.cos(angleRadians) * workingRadius+(this.fontSize/2));
-                        top = (-Math.sin(angleRadians) * workingRadius+(this.fontSize/2));
+                        left = (Math.cos(angleRadians) * workingRadius);
+                        top = (-Math.sin(angleRadians) * workingRadius);
 
                         rotation=(-toDraw[j].nextAngle)  + angleOffset + 90+(toDraw[i].kerning/2);
                     } else {
                         angleRadians = fabric.util.degreesToRadians((-toDraw[j].nextAngle) + angleOffset + 180);
-                        left = (-Math.cos(angleRadians) * workingRadius+(this.fontSize/2));
-                        top = (Math.sin(angleRadians) * workingRadius+(this.fontSize/2));
+                        left = (-Math.cos(angleRadians) * workingRadius);
+                        top = (Math.sin(angleRadians) * workingRadius);
                         rotation=toDraw[j].nextAngle - 90 - angleOffset-(toDraw[i].kerning/2);
 
                     }
