@@ -1,3 +1,5 @@
+> Please, consider this is an old tweak to FabricJs library. It may be incompatible with current versions. This repo it´s not been mantained
+
 # fabricText2
 A modified version of fabricjs Text Function to allow curved text.
 
